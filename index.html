@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" rel="stylesheet">
+    <title>GZI BOI</title>
+    <Style>
+        @font-face {
+            font-family: 'canteen_bnlight';
+            src: url('./Canben/canteenbn-light-webfont.woff2') format('woff2'),
+                url('./Canben/canteenbn-light-webfont.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .fp-prev:before {
+            color:white;
+            content: '\f16d'; /* You should use \ and not /*/
+            font-family: "Font Awesome 5 Brands"; /* This is the correct font-family*/
+            font-style: normal;
+            font-weight: 400;
+            font-size:40px;
+        }
+
+
+        body{
+            display: flex;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+        html *
+            {
+                font-family: canteen_bnlight !important;
+            }
+        .title{
+            color: #D51212;
+            font-size: 15em;
+            margin-left: 50px;
+            margin-right: 50px;
+            z-index: 1;
+            letter-spacing: 0.1em;
+        }
+        #show{
+            color: gray;
+            position: absolute;
+            top: 94%;
+            white-space:nowrap;
+            overflow:hidden;
+            font-size: 9em;
+            opacity: 0.5;
+        }
+
+        .songs{
+            position: absolute;
+            color: white;
+            font-size: 6em;
+            top: 71%;
+            left: -15%;
+        }
+
+        .songs li:hover{
+            color: #D51212;
+        }
+
+        .songs li {
+            list-style-type: none;
+        }
+
+        #show li:hover{
+            color: #D51212;
+        }
+        #show ul{ display:inline-block; padding:0px; margin:0px; }
+        #show li{ display:inline; margin-right:30px; }
+        .title-div{
+            display: flex;
+            justify-content: center;
+            place-content: space-evenly;
+            position: relative;
+        }
+        .music-div{
+            display: flex;
+            justify-content: center;
+            place-content: space-evenly;
+            position: relative;
+            margin-bottom: 450px;
+        }
+        .about-div{
+            display: flex;
+            justify-content: center;
+            place-content: space-evenly;
+            position: relative;
+            margin-bottom: 202px;
+        }
+        .main-background-color{
+            background-color: #090909;
+        }
+        .page{
+            display: flex;
+            width: 50%;
+            position: relative;
+            flex-direction: column;
+        }
+        .main-title{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        .deco-text{
+            position: absolute;
+            color: #FFFFFF;
+            letter-spacing: 0.05em;
+        }
+        #d2 {
+            width: 428px;
+            font-size: 30px;
+            top: 48%;
+            z-index: 2;
+            right: -13%;
+        }
+        #d1 {
+            width: 119px;
+            font-size: 30px;
+            top: 18%;
+            z-index: 2;
+            right: 74%;
+        }
+        #d3{
+            width: 900px;
+            letter-spacing: 10px;
+            font-size: 30px;
+            top: 72%;
+            z-index: 2;
+            right: -34%;
+        }
+        #d5{
+            width: 300px;
+            font-size: 30px;
+            top: 106%;
+            z-index: 2;
+            color: #d51212;
+            right: 61%;
+        }
+
+        #d1img1{
+            top: 61%;
+            left: -6%;
+            font-size: 30px;
+        }
+
+        #d2img1{
+            top: 67%;
+            left: -10%;
+            font-size: 30px;
+        }
+
+        .dimg1{
+            opacity: 0;
+        }
+        .loader-wrapper {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            background-color:#090909;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .img1{
+            background-image: url(./images/gzy_front_BW.jpg);
+            position: absolute;
+            width: 500px;
+            top: 45%;
+            background-size: cover;
+            height: 1000px;
+            left: -372px;
+            opacity: 50%;
+        }
+
+        .img2{
+            background-image: url(./images/gzy_back_BW.jpg);
+            position: absolute;
+            width: 500px;
+            top: 45%;
+            background-size: cover;
+            height: 1000px;
+            right: -72%;
+            opacity: 50%;
+        }
+
+        .img3{
+            background-image: url(./images/gzy_bye.jpg);
+            position: absolute;
+            width: 515px;
+            top: 45%;
+            background-position-x: center;
+            background-size: cover;
+            height: 538px;
+            right: 92%;
+            opacity: 50%;
+        }
+        div.circTxt {
+            width: 50%;
+            justify-content: center;
+            display: flex;
+            height: 50%;
+            width: 33%;
+            color: whitesmoke;
+            overflow: hidden;
+            position: absolute;
+            z-index: 3;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        a:hover {
+            color: #D51212;
+        }
+
+        a i:hover {
+            color: #D51212;
+        }
+
+        footer {
+            color: white;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+    </Style>
+</head>
+<body class="main-background-color" style="position: relative;">
+    <div class="page main-background-color">
+        <div class="main-title">
+            <div class="title-div">
+                <p id="d1" class="deco-text ">
+                    Welcome to the world of 
+                    Gzy Boi!</p>
+                <h1 class="title">GZY</h1>
+                <h1 class="title">BOI</h1>
+                <p id="d2" class="deco-text">A futuristic perspective
+                    based on concepts and values ​​such as motivation and hard work,
+                    they will take you to explore fields never before traveled 🚀</p>
+                <div class="img1"></div>
+                <p id="d1img1" class="dimg1 deco-text">Hey</p>
+                <p id="d2img1" class="dimg1 deco-text">¿Que onda?</p>
+                <div id='show'>
+                    <ul class='topics'>
+                      <li>SHOWS</li>
+                      <li>SHOWS</li>
+                      <li>SHOWS</li>
+                      <li>SHOWS</li>
+                      <li>SHOWS</li>
+                      <li>SHOWS</li>
+                      <li>SHOWS</li>
+                      <li>SHOWS</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main-title">
+            <div class="music-div">
+                <p id="d1" class="deco-text ">
+                    Welcome to the world of 
+                    Gzy Boi!</p>
+                    <h1 class="title">Music</h1>
+                    <p id="d2" class="deco-text">A futuristic perspective
+                        based on concepts and values ​​such as motivation and hard work,
+                        they will take you to explore fields never before traveled 🚀</p>
+                    <ul class='songs'>
+                        <li> <a href="https://www.youtube.com/watch?v=UKF5EKs66iA">Que onda?</a> </li>
+                        <li> <a href="https://www.youtube.com/watch?v=vA7Uc88Ra_o">Me voy de tour</a></li>
+                        <li> <a href="https://www.youtube.com/watch?v=nA9oWax_7f4">Boss</a></li>
+                        <li> <a href="https://www.youtube.com/watch?v=TEER0A6j8zs">Quien es?</a></li>
+                        <li> <a href="https://www.youtube.com/watch?v=SBsnW5Rj1Ug">Mustang negro</a></li>
+                    </ul>
+                    <div class="img2"></div>
+            </div>
+        </div>
+        <div class="main-title">
+            <div class="about-div">
+                    <h1 class="title">About</h1>
+                    <p id="d3" class="deco-text">A futuristic perspective
+                        based on concepts and values ​​such as motivation and hard work.
+                        they will take you to explore fields never before traveled 🚀
+                    </p>
+                    <!-- <p id="d4" class="deco-text">
+                    </p> -->
+                    <p id="d5" class="deco-text">
+                        GZY BOI
+                    </p>
+                    <div class="img3"></div>
+            </div>          
+        </div>
+        <footer>  
+           <a class="fp-prev" href="https://www.instagram.com/gzy_boi/"></a> 
+        </footer>
+    </div>
+    
+    <div id="loader" class="loader-wrapper">
+        <div class="circTxt"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script>
+
+    const d1 = document.getElementById("d1");
+    const d2 = document.getElementById("d2");
+    const loader = document.getElementsByClassName("loader-wrapper")[0];
+    const gzyTitle = document.getElementsByClassName("title")[0];
+    const img1 = document.getElementsByClassName("img1")[0];
+    const boiTitle = document.getElementsByClassName("title")[1];
+
+    var topics = document.querySelector('.topics').cloneNode(true);
+    document.getElementById("show").appendChild(topics);
+
+    tl2 = new TimelineMax();
+
+   
+
+    deleteLoader = () => {
+     var loader = document.getElementById("loader");
+     loader.remove();
+    }
+
+    function circularText(txt, radius, classIndex,fontSize) {
+        txt = txt.split(""),
+            classIndex = document.getElementsByClassName("circTxt")[classIndex];
+
+        var deg = 360 / txt.length,
+            origin = 0;
+
+        txt.forEach((ea) => {
+            ea = `<p style='height:${radius}px;position:absolute;font-size:${fontSize}px;margin:0px;transform:rotate(${origin}deg);transform-origin:0 100%'>${ea}</p>`;
+            classIndex.innerHTML += ea;
+            origin += deg;
+        });
+    }
+
+    circularText(" Welcome to the world of Gzy Boi ", 150, 0,30);
+    
+    tl = new TimelineMax();
+
+    tl.to(loader.children, 18, {rotation:"360", ease:Linear.easeNone,repeat:-1})
+    .to(loader, 1.5, { opacity:0, ease:Power2.easeInOut}, "-=17")
+    .from(gzyTitle,0.5,{ opacity:0, ease:Power2.easeInOut})
+    .from(boiTitle,0.5,{ opacity:0, ease:Power2.easeInOut, onComplete:deleteLoader})
+    .from(d1,1,{opacity:0,y:-10, ease:Power2.easeInOut})
+    .from(d2,1,{opacity:0,y:10, ease:Power2.easeInOut})
+    .from(img1,2,{ opacity:0, ease:Power2.easeInOut})
+    .to('.topics',60,{x:-topics.offsetWidth,repeat:-1,ease:Linear.easeNone}, "-=10")
+
+    img1.addEventListener('mouseenter', () => {
+        gsap.to('.dimg1',1.5,{opacity:1,y:-10, ease:Power2.easeInOut, stagger:1})
+    })
+    img1.addEventListener('mouseleave', () => {
+        gsap.to('.dimg1',1,{opacity:0,y:-10, ease:Power2.easeInOut, stagger:0.3})
+    })
+
+   </script>
+
+    </body>
+</html>
