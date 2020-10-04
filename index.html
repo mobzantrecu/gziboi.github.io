@@ -126,7 +126,21 @@
             z-index: 2;
             right: 74%;
         }
-        #d3{
+        #d4 {
+            width: 428px;
+            font-size: 30px;
+            top: 48%;
+            z-index: 2;
+            right: -13%;
+        }
+        #d3 {
+            width: 119px;
+            font-size: 30px;
+            top: 18%;
+            z-index: 2;
+            right: 74%;
+        }
+        #d5{
             width: 900px;
             letter-spacing: 10px;
             font-size: 30px;
@@ -134,7 +148,7 @@
             z-index: 2;
             right: -34%;
         }
-        #d5{
+        #d6{
             width: 300px;
             font-size: 30px;
             top: 106%;
@@ -193,7 +207,7 @@
         }
 
         .img3{
-            background-image: url(./images/gzy_bye.jpg);
+            background-image: url(./images/gzy_bye_BW.jpg);
             position: absolute;
             width: 515px;
             top: 45%;
@@ -204,15 +218,16 @@
             opacity: 50%;
         }
         div.circTxt {
-            width: 50%;
             justify-content: center;
             display: flex;
-            height: 50%;
-            width: 33%;
+            height: 304px;
+            width: 318px;
             color: whitesmoke;
             overflow: hidden;
             position: absolute;
+            top: 24%;
             z-index: 3;
+            position: fixed;
         }
 
         a {
@@ -234,6 +249,36 @@
             display: flex;
             justify-content: center;
         }
+
+        @media (min-width: 576px) and (max-width: 768px){ 
+            /* Tablet */
+            .title {
+                color: tan;
+            } 
+        }
+        @media (min-width: 376px) and (max-width: 425px){ 
+            /* Mobile L */
+
+            .title {
+                color:teal;
+            } 
+        }
+        @media (min-width: 321.1px) and (max-width: 375px){ 
+            /* Mobile M */
+
+            .title {
+                color:tomato;
+            } 
+        }
+
+        @media (max-width: 320px) { 
+            /* Mobile s */
+
+            .title {
+                color: white;
+            } 
+        }
+        
 
     </Style>
 </head>
@@ -268,19 +313,19 @@
         </div>
         <div class="main-title">
             <div class="music-div">
-                <p id="d1" class="deco-text ">
+                <p id="d3" class="deco-text ">
                     Welcome to the world of 
                     Gzy Boi!</p>
                     <h1 class="title">Music</h1>
-                    <p id="d2" class="deco-text">A futuristic perspective
+                    <p id="d4" class="deco-text">A futuristic perspective
                         based on concepts and values ​​such as motivation and hard work,
                         they will take you to explore fields never before traveled 🚀</p>
                     <ul class='songs'>
-                        <li> <a href="https://www.youtube.com/watch?v=UKF5EKs66iA">Que onda?</a> </li>
-                        <li> <a href="https://www.youtube.com/watch?v=vA7Uc88Ra_o">Me voy de tour</a></li>
-                        <li> <a href="https://www.youtube.com/watch?v=nA9oWax_7f4">Boss</a></li>
-                        <li> <a href="https://www.youtube.com/watch?v=TEER0A6j8zs">Quien es?</a></li>
-                        <li> <a href="https://www.youtube.com/watch?v=SBsnW5Rj1Ug">Mustang negro</a></li>
+                        <li class="song"> <a href="https://www.youtube.com/watch?v=UKF5EKs66iA">Que onda?</a> </li>
+                        <li class="song"> <a href="https://www.youtube.com/watch?v=vA7Uc88Ra_o">Me voy de tour</a></li>
+                        <li class="song"> <a href="https://www.youtube.com/watch?v=nA9oWax_7f4">Boss</a></li>
+                        <li class="song"> <a href="https://www.youtube.com/watch?v=TEER0A6j8zs">Quien es?</a></li>
+                        <li class="song"> <a href="https://www.youtube.com/watch?v=SBsnW5Rj1Ug">Mustang negro</a></li>
                     </ul>
                     <div class="img2"></div>
             </div>
@@ -288,13 +333,13 @@
         <div class="main-title">
             <div class="about-div">
                     <h1 class="title">About</h1>
-                    <p id="d3" class="deco-text">A futuristic perspective
+                    <p id="d5" class="deco-text">A futuristic perspective
                         based on concepts and values ​​such as motivation and hard work.
                         they will take you to explore fields never before traveled 🚀
                     </p>
                     <!-- <p id="d4" class="deco-text">
                     </p> -->
-                    <p id="d5" class="deco-text">
+                    <p id="d6" class="deco-text">
                         GZY BOI
                     </p>
                     <div class="img3"></div>
@@ -306,25 +351,42 @@
     </div>
     
     <div id="loader" class="loader-wrapper">
-        <div class="circTxt"></div>
+        <div id="circTxt" class="circTxt"></div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
     <script>
+
+    document.getElementById('loader').scroll((e) => {
+        debugger
+        document.getElementById('loader').style.top = this.scrollTop();
+    })
+
+    gsap.registerPlugin(ScrollTrigger)
 
     const d1 = document.getElementById("d1");
     const d2 = document.getElementById("d2");
+    const d3 = document.getElementById("d3");
+    const d4 = document.getElementById("d4");
     const loader = document.getElementsByClassName("loader-wrapper")[0];
     const gzyTitle = document.getElementsByClassName("title")[0];
     const img1 = document.getElementsByClassName("img1")[0];
     const boiTitle = document.getElementsByClassName("title")[1];
 
+    const musicTitle = document.getElementsByClassName("title")[2];
+    const aboutTitle = document.getElementsByClassName("title")[3];
+
+
     var topics = document.querySelector('.topics').cloneNode(true);
     document.getElementById("show").appendChild(topics);
 
-    tl2 = new TimelineMax();
-
-   
+    img1.addEventListener('mouseenter', () => {
+        gsap.to('.dimg1',1.5,{opacity:1,y:-10, ease:Power2.easeInOut, stagger:1})
+    })
+    img1.addEventListener('mouseleave', () => {
+        gsap.to('.dimg1',1,{opacity:0,y:-10, ease:Power2.easeInOut, stagger:0.3})
+    })
 
     deleteLoader = () => {
      var loader = document.getElementById("loader");
@@ -348,7 +410,12 @@
     circularText(" Welcome to the world of Gzy Boi ", 150, 0,30);
     
     tl = new TimelineMax();
-
+    tl2 = new TimelineMax({
+        scrollTrigger: {trigger: musicTitle, start:'30% center'}
+    })
+    tl3 = new TimelineMax({
+        scrollTrigger: {trigger: aboutTitle, start:'30% center'}
+    })
     tl.to(loader.children, 18, {rotation:"360", ease:Linear.easeNone,repeat:-1})
     .to(loader, 1.5, { opacity:0, ease:Power2.easeInOut}, "-=17")
     .from(gzyTitle,0.5,{ opacity:0, ease:Power2.easeInOut})
@@ -358,12 +425,17 @@
     .from(img1,2,{ opacity:0, ease:Power2.easeInOut})
     .to('.topics',60,{x:-topics.offsetWidth,repeat:-1,ease:Linear.easeNone}, "-=10")
 
-    img1.addEventListener('mouseenter', () => {
-        gsap.to('.dimg1',1.5,{opacity:1,y:-10, ease:Power2.easeInOut, stagger:1})
-    })
-    img1.addEventListener('mouseleave', () => {
-        gsap.to('.dimg1',1,{opacity:0,y:-10, ease:Power2.easeInOut, stagger:0.3})
-    })
+    
+    tl2.from(musicTitle,0.5,{  opacity:0, ease:Power2.easeInOut})
+    .from(d3,0.5,{opacity:0,y:-10, ease:Power2.easeInOut})
+    .from(d4,0.5,{opacity:0,y:10, ease:Power2.easeInOut})
+    .from('.img2',1,{ opacity:0, ease:Power2.easeInOut})
+    .from('.song',0.5,{y: -20, opacity:0, ease:Power2.easeInOut, stagger: 0.3})
+
+    tl3.from(aboutTitle,0.5,{  opacity:0, ease:Power2.easeInOut})
+    .from(d5,0.5,{opacity:0,y:-10, ease:Power2.easeInOut})
+    .from(d6,0.5,{opacity:0,y:10, ease:Power2.easeInOut})
+    .from('.img3',1,{ opacity:0, ease:Power2.easeInOut})
 
    </script>
 
