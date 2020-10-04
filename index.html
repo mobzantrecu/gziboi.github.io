@@ -261,7 +261,67 @@
 
             .title {
                 color:teal;
+                font-size: 10em;
+                margin-left: 10px;
+                margin-right: 10px;
             } 
+
+            .img1{
+                top: -32%;
+                left: -323px;
+            }
+
+            .title-div {
+                margin-left: 165px;
+                margin-top: 191px;
+            }
+
+            .music-div {
+                margin-left: 165px;
+            }
+
+            .about-div {
+                margin-left: 165px;
+            }
+
+            #d2 {
+                width: 300px;
+                font-size: 24px;
+                top: 48%;
+                z-index: 2;
+                right: -4%;
+            }
+
+            #d1 {
+                font-size: 24px;
+                width: 186px;
+                top: 18%;
+                z-index: 2;
+                right: 60%;
+
+            }
+
+            .songs {
+                font-size: 5em;
+                z-index: 2;
+            }
+
+            #d4 {
+                width: 300px;
+                font-size: 24px;
+                top: 48%;
+                z-index: 2;
+                right: -4%;
+            }
+
+            #d3 {
+                font-size: 24px;
+                width: 186px;
+                top: 18%;
+                z-index: 2;
+                right: 60%;
+
+            }
         }
         @media (min-width: 321.1px) and (max-width: 375px){ 
             /* Mobile M */
@@ -411,10 +471,10 @@
     
     tl = new TimelineMax();
     tl2 = new TimelineMax({
-        scrollTrigger: {trigger: musicTitle, start:'30% center'}
+        scrollTrigger: {trigger: musicTitle, start:'33% center' , markers:true}
     })
     tl3 = new TimelineMax({
-        scrollTrigger: {trigger: aboutTitle, start:'30% center'}
+        scrollTrigger: {trigger: aboutTitle, start:'30% center', markers:true}
     })
     tl.to(loader.children, 18, {rotation:"360", ease:Linear.easeNone,repeat:-1})
     .to(loader, 1.5, { opacity:0, ease:Power2.easeInOut}, "-=17")
