@@ -337,6 +337,10 @@
                 right: 76px;
             }
 
+            .songs {
+                top: 379px;
+            }
+
             #d5 {
                 font-size: 36px;
                 letter-spacing: 0.10em;
@@ -498,10 +502,10 @@
     
     tl = new TimelineMax();
     tl2 = new TimelineMax({
-        scrollTrigger: {trigger: musicTitle, start:'33% center' , markers:true}
+        scrollTrigger: {trigger: musicTitle, start:'0px center' , markers:true}
     })
     tl3 = new TimelineMax({
-        scrollTrigger: {trigger: aboutTitle, markers:true}
+        scrollTrigger: {trigger: aboutTitle,  start:'0px center', markers:true}
     })
     tl.to(loader.children, 18, {rotation:"360", ease:Linear.easeNone,repeat:-1})
     .to(loader, 1.5, { opacity:0, ease:Power2.easeInOut}, "-=17")
