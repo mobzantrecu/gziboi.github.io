@@ -357,7 +357,7 @@
 
     </Style>
 </head>
-<body class="main-background-color" style="position: relative;">
+<body class="main-background-color">
     <div class="page main-background-color">
         <div class="main-title">
             <div class="title-div">
@@ -511,6 +511,39 @@
     .from(d5,0.5,{opacity:0,y:-10, ease:Power2.easeInOut})
     .from(d6,0.5,{opacity:0,y:10, ease:Power2.easeInOut})
     .from('.img3',1,{ opacity:0, ease:Power2.easeInOut})
+
+
+    const titileDiv = document.getElementsByClassName("title-div")[0];
+    const musicDiv = document.getElementsByClassName("music-div")[0];
+    const aboutDiv = document.getElementsByClassName("about-div")[0];
+
+    titileDiv.addEventListener('touchstart', _onTouchStart)
+    titileDiv.addEventListener('touchmove', _onTouchMove)
+    titileDiv.addEventListener('touchend', _onTouchEnd)
+
+    musicDiv.addEventListener('touchstart', _onTouchStart)
+    musicDiv.addEventListener('touchmove', _onTouchMove)
+    musicDiv.addEventListener('touchend', _onTouchEnd)
+    
+    aboutDiv.addEventListener('touchstart', _onTouchStart)
+    aboutDiv.addEventListener('touchmove', _onTouchMove)
+    aboutDiv.addEventListener('touchend', _onTouchEnd)
+
+ 
+    function _onTouchStart(e) {
+        console.log('event')
+        e.stopPropagation();
+    }
+
+    function _onTouchMove(e) {
+        console.log('event')
+        e.stopPropagation();
+    }
+
+    function _onTouchEnd(e) {
+        console.log('event')
+        e.stopPropagation();
+    }
 
    </script>
 
